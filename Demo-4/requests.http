@@ -1,0 +1,27 @@
+#Local Test
+GET http://192.168.1.159:8080/
+
+
+GET http://192.168.1.159:8080/?name=Ron
+
+
+POST http://192.168.1.159:8080/
+content-type: application/json
+
+{
+    "name": "Nancy"
+}
+
+#GCP Tests
+GET https://us-east1-test-cloud-func-1.cloudfunctions.net/demo4
+
+
+GET https://us-east1-test-cloud-func-1.cloudfunctions.net/demo4?name=Ron
+
+
+POST https://us-east1-test-cloud-func-1.cloudfunctions.net/demo4
+content-type: application/json
+
+{
+    "name": "Nancy"
+}

@@ -1,0 +1,9 @@
+GET https://us-east1-test-cloud-func-1.cloudfunctions.net/function-1?message=sasa
+
+
+POST https://us-east1-test-cloud-func-1.cloudfunctions.net/function-1
+content-type: application/json
+
+{
+    "message":"sample message"
+}

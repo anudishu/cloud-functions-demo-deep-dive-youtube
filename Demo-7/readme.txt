@@ -1,0 +1,1 @@
+Accessing Secret from Secrets Manager

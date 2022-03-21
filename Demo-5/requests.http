@@ -1,0 +1,35 @@
+#Local Test
+POST http://localhost:8080/
+content-type: application/cloudevents+json
+
+{
+    "event_id": 4213619383751580,
+    "timestamp": "2022-03-17T18:03:57.629Z",
+    "event_type": "google.pubsub.topic.publish",
+    "resource": 
+        {
+            "service": "pubsub.googleapis.com", 
+            "name": "projects/test-cloud-func-1/topics/my-awesome-topic",
+            "type": "type.googleapis.com/google.pubsub.v1.PubsubMessage"
+        }
+}
+{
+    "@type": "type.googleapis.com/google.pubsub.v1.PubsubMessage",
+    "attributes": "",
+    "data": "aGVsbG8gd29ybGQ="
+}
+
+
+#GCP Tests
+GET https://us-east1-test-cloud-func-1.cloudfunctions.net/demo4
+
+
+GET https://us-east1-test-cloud-func-1.cloudfunctions.net/demo4?name=Ron
+
+
+POST https://us-east1-test-cloud-func-1.cloudfunctions.net/demo4
+content-type: application/json
+
+{
+    "name": "Nancy"
+}

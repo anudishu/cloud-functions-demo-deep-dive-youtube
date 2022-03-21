@@ -1,0 +1,12 @@
+GET https://us-east1-test-cloud-func-1.cloudfunctions.net/demo3
+
+
+GET https://us-east1-test-cloud-func-1.cloudfunctions.net/demo3?name=Jim
+
+
+POST https://us-east1-test-cloud-func-1.cloudfunctions.net/demo3
+content-type: application/json
+
+{
+    "name": "Joyce"
+}

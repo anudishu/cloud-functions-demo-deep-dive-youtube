@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $.get("https://us-east1-test-cloud-func-4.cloudfunctions.net/demo8", function(data, status){
+      //alert("Data: " + data + "\nStatus: " + status);
+      $("#div1").html(data);
+    });
+  });
+});
+</script>
+</head>
+<body>
+
+
+
+<button>Send an HTTP GET request to a page and get the result back</button>
+<br/>
+<br/>
+<br/>
+
+<div id="div1">Display Students Here</div>
+
+</body>
+</html>

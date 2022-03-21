@@ -1,0 +1,7 @@
+__pycache__
+venv
+python-pubsub
+readme.txt
+.gcloudignore
+deployment-steps.txt
+requests.http

@@ -1,0 +1,4 @@
+.DS_Store
+python-pubsub
+**/__pycache__
+**/venv
