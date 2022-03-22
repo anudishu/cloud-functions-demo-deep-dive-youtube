@@ -3,5 +3,6 @@ venv
 python-pubsub
 readme.txt
 .gcloudignore
-deployment-steps.txt
+deployment-steps.md
 requests.http
+index.html
