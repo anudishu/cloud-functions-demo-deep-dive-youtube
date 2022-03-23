@@ -12,7 +12,10 @@
 
 - `gcloud config set project PROJECT_ID`
 
-- `gcloud config set project test-cloud-func-1`
+  - `gcloud config set project gcp-cloud-functions-demo-1`
+
+- Create Service Account
+  - `gcloud iam service-accounts create cloud-functions-demo-service-account --display-name="Cloud Functions Demo Service Account"`
 
 ## Enable APIs
 
@@ -60,4 +63,4 @@
 
 # Deploy to GCP
 
-- `gcloud functions deploy demo8 --entry-point hello --runtime python39 --source . --region us-east1 --trigger-http --allow-unauthenticated --set-env-vars ENVIRONMENT=cloudfunction --set-secrets DATABASE_PASSWORD=db-password:latest`
+- `gcloud functions deploy demo8 --entry-point hello --runtime python39 --source . --region us-east1 --trigger-http --allow-unauthenticated --set-env-vars ENVIRONMENT=cloudfunction --set-secrets DATABASE_PASSWORD=db-password:latest --service-account cloud-functions-demo-sa@gcp-cloud-functions-demo-1.iam.gserviceaccount.com`

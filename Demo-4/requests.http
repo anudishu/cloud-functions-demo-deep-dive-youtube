@@ -13,13 +13,13 @@ content-type: application/json
 }
 
 #GCP Tests
-GET https://us-east1-test-cloud-func-1.cloudfunctions.net/demo4
+GET https://us-east1-gcp-cloud-functions-demo-1.cloudfunctions.net/demo4
 
 
-GET https://us-east1-test-cloud-func-1.cloudfunctions.net/demo4?name=Ron
+GET https://us-east1-gcp-cloud-functions-demo-1.cloudfunctions.net/demo4?name=Ron
 
 
-POST https://us-east1-test-cloud-func-1.cloudfunctions.net/demo4
+POST https://us-east1-gcp-cloud-functions-demo-1.cloudfunctions.net/demo4
 content-type: application/json
 
 {

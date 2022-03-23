@@ -2,15 +2,17 @@
 
 ## Test on Local
 
-- `cd Demo-4`
+- `cd Demo-5`
 
 - > Main Terminal:
-
+- `python -m venv venv`
+- `source venv/bin/activate`
+- `pip install -r requirements.txt`
 - `functions-framework --target=hello --signature-type=event --debug --port=8080 --host 0.0.0.0`
 
 - > Terminal 2:
 - `export PUBSUB_PROJECT_ID=my-project`
-- `gcloud beta emulators pubsub start \ --project=$PUBSUB_PROJECT_ID \ --host-port=localhost:8085`
+- `gcloud beta emulators pubsub start --project=$PUBSUB_PROJECT_ID --host-port=localhost:8085`
 
 - > Termanal 3:
 - `export PUBSUB_PROJECT_ID=my-project`
@@ -32,14 +34,17 @@
 
 - `gcloud config set project PROJECT_ID`
 
-- `gcloud config set project test-cloud-func-1`
+  - `gcloud config set project gcp-cloud-functions-demo-1`
+
+- Create Service Account
+  - `gcloud iam service-accounts create cloud-functions-demo-sa --display-name="Cloud Functions Demo Service Account"`
 
 ## Deploy to GCP
 
 - Create topic my-awesome-topic
 
-- Create bucket my-awesome-bucket-12345
+- Create bucket my-awesome-bucket-123456
 
-- `gcloud functions deploy demo5-pubsub --entry-point hello --runtime python39 --source . --region us-east1 --trigger-topic my-awesome-topic`
+- `gcloud functions deploy demo5-pubsub --entry-point hello --runtime python39 --source . --region us-east1 --trigger-topic my-awesome-topic --service-account cloud-functions-demo-sa@gcp-cloud-functions-demo-1.iam.gserviceaccount.com`
 
-- `gcloud functions deploy demo5-cloud-storage --entry-point hello --runtime python39 --source . --region us-east1 --trigger-bucket my-awesome-bucket-12345`
+- `gcloud functions deploy demo5-cloud-storage --entry-point hello --runtime python39 --source . --region us-east1 --trigger-bucket my-awesome-bucket-123456 --service-account cloud-functions-demo-sa@gcp-cloud-functions-demo-1.iam.gserviceaccount.com`

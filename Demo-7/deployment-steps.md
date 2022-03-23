@@ -10,7 +10,10 @@
 
 - `gcloud config set project PROJECT_ID`
 
-- `gcloud config set project test-cloud-func-1`
+  - `gcloud config set project gcp-cloud-functions-demo-1`
+
+- Create Service Account
+  - `gcloud iam service-accounts create cloud-functions-demo-service-account --display-name="Cloud Functions Demo Service Account"`
 
 ## Enable APIs
 
@@ -18,8 +21,10 @@
 
 ## Modify IAM Role
 
-- Add Cloud SQL Client Role to IAM Role
+- Add Cloud SQL Client Role to Service Account
+  - `gcloud projects add-iam-policy-binding gcp-cloud-functions-demo-1 --member serviceAccount:cloud-functions-demo-sa@gcp-cloud-functions-demo-1.iam.gserviceaccount.com --role 'roles/cloudsql.client'`
 - Add Secret Manager Secret Accessor Role to IAM Role
+ - `gcloud projects add-iam-policy-binding gcp-cloud-functions-demo-1 --member serviceAccount:cloud-functions-demo-sa@gcp-cloud-functions-demo-1.iam.gserviceaccount.com --role 'roles/secretmanager.secretAccessor'`
 
 ## Create MySQL Database
 
@@ -58,4 +63,4 @@
 
 ## Deploy to GCP
 
-- `gcloud functions deploy demo7 --entry-point hello --runtime python39 --source . --region us-east1 --trigger-http --allow-unauthenticated --set-env-vars ENVIRONMENT=cloudfunction --set-secrets DATABASE_PASSWORD=db-password:latest`
+- `gcloud functions deploy demo7 --entry-point hello --runtime python39 --source . --region us-east1 --trigger-http --allow-unauthenticated --set-env-vars ENVIRONMENT=cloudfunction --set-secrets DATABASE_PASSWORD=db-password:latest --service-account cloud-functions-demo-sa@gcp-cloud-functions-demo-1.iam.gserviceaccount.com`

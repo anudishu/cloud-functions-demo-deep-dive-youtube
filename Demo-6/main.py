@@ -6,10 +6,10 @@ from flask import Response
 
 
 
-CONNECTION_NAME = "test-cloud-func-1:us-east1:test-sql-1"
+CONNECTION_NAME = "gcp-cloud-functions-demo-1:us-east1:test-sql-1"
 HOST = "34.75.46.233"
 DB_USER = "root"
-DB_PASSWORD = "admin"
+DB_PASSWORD = "xLKfnJjBdsr0l060"
 DB_NAME = "mydb"
 
 mysql_config_for_local = {

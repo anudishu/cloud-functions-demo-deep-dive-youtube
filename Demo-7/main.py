@@ -7,7 +7,7 @@ from flask import Response
 
 
 
-CONNECTION_NAME = "test-cloud-func-2:us-east1:test-sql-1"
+CONNECTION_NAME = "gcp-cloud-functions-demo-1:us-east1:test-sql-1"
 HOST = "34.75.46.233"
 DB_USER = "root"
 if getenv("ENVIRONMENT","local") == "cloudfunction":

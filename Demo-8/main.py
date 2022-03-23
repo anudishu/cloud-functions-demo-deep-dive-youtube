@@ -7,7 +7,7 @@ from flask import Response
 
 
 
-CONNECTION_NAME = "test-cloud-func-4:us-east1:test-sql-1"
+CONNECTION_NAME = "gcp-cloud-functions-demo-1:us-east1:test-sql-1"
 HOST = "34.75.46.233"
 DB_USER = "root"
 if getenv("ENVIRONMENT","local") == "cloudfunction":
@@ -37,6 +37,17 @@ mysql_config_for_cloud_functions = {
   }
 
 def hello(request):
+    if request.method == 'OPTIONS':
+        # Allows GET requests from any origin with the Content-Type
+        # header and caches preflight response for an 3600s
+        headers = {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET',
+            'Access-Control-Allow-Headers': 'Content-Type',
+            'Access-Control-Max-Age': '3600'
+        }
+
+        return ('', 204, headers)
 
     if getenv("ENVIRONMENT","local") == "cloudfunction":
         print("Running in Cloud Functions Environment")
@@ -52,6 +63,7 @@ def hello(request):
         print(result)
     
     headers = {
+        'Access-Control-Allow-Origin': '*',
         'mimetype':'application/json'
     }
 
