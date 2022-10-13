@@ -1,10 +1,10 @@
-GET https://us-east1-gcp-cloud-functions-demo-1.cloudfunctions.net/demo3
+GET https://us-east1-my-project-asksumit.cloudfunctions.net/demo3
 
 
-GET https://us-east1-gcp-cloud-functions-demo-1.cloudfunctions.net/demo3?name=Jim
+GET https://us-east1-my-project-asksumit.cloudfunctions.net/demo3?name=Jim
 
 
-POST https://us-east1-gcp-cloud-functions-demo-1.cloudfunctions.net/demo3
+POST https://us-east1-my-project-asksumit.cloudfunctions.net/demo3
 content-type: application/json
 
 {

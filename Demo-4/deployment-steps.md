@@ -23,4 +23,4 @@
 
 ## Deploy to GCP
 
-- `gcloud functions deploy demo4 --entry-point hello --runtime python39 --source . --region us-east1 --trigger-http --allow-unauthenticated --service-account cloud-functions-demo-sa@gcp-cloud-functions-demo-1.iam.gserviceaccount.com`
+- `gcloud functions deploy demo4 --entry-point hello --runtime python39 --source . --region us-east1 --trigger-http --allow-unauthenticated --service-account cloud-functions-demo-sa@my-project-asksumit.iam.gserviceaccount.com`

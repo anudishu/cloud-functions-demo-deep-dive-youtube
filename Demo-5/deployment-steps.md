@@ -45,6 +45,6 @@
 
 - Create bucket my-awesome-bucket-123456
 
-- `gcloud functions deploy demo5-pubsub --entry-point hello --runtime python39 --source . --region us-east1 --trigger-topic my-awesome-topic --service-account cloud-functions-demo-sa@gcp-cloud-functions-demo-1.iam.gserviceaccount.com`
+- `gcloud functions deploy demo5-pubsub --entry-point hello --runtime python39 --source . --region us-east1 --trigger-topic my-awesome-topic --service-account cloud-functions-demo-sa@my-project-asksumit.iam.gserviceaccount.com`
 
-- `gcloud functions deploy demo5-cloud-storage --entry-point hello --runtime python39 --source . --region us-east1 --trigger-bucket my-awesome-bucket-123456 --service-account cloud-functions-demo-sa@gcp-cloud-functions-demo-1.iam.gserviceaccount.com`
+- `gcloud functions deploy demo5-cloud-storage --entry-point hello --runtime python39 --source . --region us-east1 --trigger-bucket my-awesome-bucket-123456 --service-account cloud-functions-demo-sa@my-project-asksumit.iam.gserviceaccount.com`

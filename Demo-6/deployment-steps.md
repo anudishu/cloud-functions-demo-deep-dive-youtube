@@ -22,7 +22,7 @@
 ## Modify IAM Role
 
 - Add Cloud SQL Client Role to Service Account
-  - `gcloud projects add-iam-policy-binding gcp-cloud-functions-demo-1 --member serviceAccount:cloud-functions-demo-sa@gcp-cloud-functions-demo-1.iam.gserviceaccount.com --role 'roles/cloudsql.client'`
+  - `gcloud projects add-iam-policy-binding 	my-project-asksumit --member serviceAccount:cloud-functions-demo-sa@	my-project-asksumit.iam.gserviceaccount.com --role 'roles/cloudsql.client'`
 
 ## Create MySQL Database
 
@@ -30,4 +30,4 @@
 
 ## Deploy to GCP
 
-- `gcloud functions deploy demo6 --entry-point hello --runtime python39 --source . --region us-east1 --trigger-http --allow-unauthenticated --set-env-vars ENVIRONMENT=cloudfunction --service-account cloud-functions-demo-sa@gcp-cloud-functions-demo-1.iam.gserviceaccount.com`
+- `gcloud functions deploy demo6 --entry-point hello --runtime python39 --source . --region us-east1 --trigger-http --allow-unauthenticated --set-env-vars ENVIRONMENT=cloudfunction --service-account cloud-functions-demo-sa@	my-project-asksumit.iam.gserviceaccount.com`
